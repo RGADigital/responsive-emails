@@ -388,7 +388,8 @@ grunt.registerTask('compile', function (type) {
   //grunt.task.run('htmlmin:compile');
 });
 
-grunt.registerTask('test',  function (type) {
+grunt.registerTask('test', function (type) {
   grunt.task.run('compile');
-  grunt.task.run(type+':test');
+  grunt.task.run(type + ':test');
+});
 };
