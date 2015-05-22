@@ -7,32 +7,6 @@ var appConfig = require( './app.config.js' );
 var mailConfig = require( './mail.config.js' );
 
 var taskConfig = {
-  // HTML Builder
-  // Appends scripts and styles, Removes debug parts, append html partials, Template options
-  // https://github.com/spatools/grunt-html-build
-  htmlbuild: {
-    build: {
-      files: [{
-        expand: true,
-        cwd: '<%= build_dir %>/emails/',
-        src: ['**/*.html'],
-        dest: '<%= build_dir %>/emails/',
-      }],
-      options: {
-        parseTag: 'build',
-        beautify: false,
-        relative: true,
-        styles: {
-          vendor: [
-            '<%= build_dir %>/vendor/**/*.css'
-          ],
-          app: [
-            '<%= build_dir %>/css/**/*.css'
-          ]
-        }
-      }
-    }
-  },
 
   // Clean
   // Clean files and folders.
@@ -336,7 +310,7 @@ var taskConfig = {
       options: {
         key: '<%= mailgun_options.key %>',
         sender: '<%= mailgun_options.sender %>',
-        recipient: ['Tim.Hettler@rga.com'],
+        recipient: ['<%= mailgun_options.recipient %>'],
         subject: 'Congrats from the YouTube Ads Leaderboard',
         preventThreading: true
       },
