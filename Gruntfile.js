@@ -331,7 +331,29 @@ var taskConfig = {
     test: {
       src: ['<%= compile_dir %>/emails/**/*.html']
     }
-  }
+  },
+
+  // Grunt Bump
+  // Increment package version.
+  // https://github.com/vojtajina/grunt-bump
+  bump: {
+    options: {
+      files: ['package.json', 'bower.json'],
+      updateConfigs: [],
+      commit: true,
+      commitMessage: 'Release v%VERSION%',
+      commitFiles: ['package.json', 'bower.json'],
+      createTag: true,
+      tagName: 'v%VERSION%',
+      tagMessage: 'Version %VERSION%',
+      push: true,
+      pushTo: 'origin',
+      gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+      globalReplace: false,
+      prereleaseName: false,
+      regExp: false
+    }
+  },
 };
 
 grunt.initConfig( grunt.util._.extend( taskConfig, appConfig, mailConfig ) );
