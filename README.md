@@ -3,7 +3,7 @@ This workflow utilizes the [Ink Resposnive Email Framework](http://zurb.com/ink/
 ## Getting Started
 
 ```
-npm install && bower install
+npm install && bower install && bundle install
 ```
 
 `grunt server` for dev
