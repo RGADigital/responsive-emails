@@ -179,7 +179,7 @@ var taskConfig = {
   connect : {
     options: {
       port: 9000,
-      //livereload: 35729,
+      livereload: 35729,
       // change this to '0.0.0.0' to access the server from outside
       hostname: 'localhost'
     },
@@ -362,11 +362,11 @@ grunt.registerTask( 'server', [ 'build', 'connect:livereload', 'watch' ] );
 grunt.registerTask( 'default', [ 'server' ] );
 
 grunt.registerTask('build', [
-    'clean:build',
-    'copy:build_assets',
-    'copy:build_vendor',
-    'sass:build', 'autoprefixer:build',
-    'assemble:build', 'processhtml:build'
+  'clean:build',
+  'copy:build_assets',
+  'copy:build_vendor',
+  'sass:build', 'autoprefixer:build',
+  'assemble:build', 'processhtml:build'
 ]);
 
 grunt.registerTask('compile', function (type) {
